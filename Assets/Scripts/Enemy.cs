@@ -21,7 +21,7 @@ public class Enemy : MonoBehaviour
         if (StunPowerUp.isGlobalStunned)
         {
             rb.linearVelocity = Vector3.zero;
-            return; // หยุดการทำงานบรรทัดล่างทันที
+            return;
         }
 
         if (player != null)
