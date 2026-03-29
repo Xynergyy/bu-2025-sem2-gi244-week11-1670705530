@@ -8,7 +8,8 @@ public class Enemy : MonoBehaviour
 
     private Rigidbody rb;
     private GameObject player;
-    
+
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -21,7 +22,7 @@ public class Enemy : MonoBehaviour
         if (StunPowerUp.isGlobalStunned)
         {
             rb.linearVelocity = Vector3.zero;
-            return; // หยุดการทำงานบรรทัดล่างทันที
+            return; 
         }
 
         if (player != null)
@@ -29,7 +30,16 @@ public class Enemy : MonoBehaviour
             Vector3 dir = (player.transform.position - transform.position).normalized;
             rb.AddForce(dir * speed);
         }
+
+        float distance = Vector3.Distance(transform.position, Vector3.zero);
+
+        if (distance > 25f)
+        {
+            Destroy(gameObject);
+        }
     }
+
+
 
     public void SetStun(bool value)
     {

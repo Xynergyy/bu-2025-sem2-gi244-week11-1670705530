@@ -221,7 +221,7 @@ Transform:
   m_GameObject: {fileID: 190401263}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.56, y: 0, z: -1.07}
+  m_LocalPosition: {x: 8.56, y: 1, z: -1.07}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -383,7 +383,7 @@ Transform:
   m_GameObject: {fileID: 1176266728}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.4, y: 0, z: -11.1}
+  m_LocalPosition: {x: 3.4, y: 1, z: -11.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -764,7 +764,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StunPowerUp
   stunDuration: 5
-  isCurrentlyStunning: 0
 --- !u!1 &1289295229 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1742899641471652, guid: 923deea38dc6a8843b15db7638919c1e, type: 3}
@@ -780,6 +779,10 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1301643505922104, guid: 961be46ca9a355943ae3f65c47741bb0, type: 3}
       propertyPath: m_Name
+      value: Island
+      objectReference: {fileID: 0}
+    - target: {fileID: 1301643505922104, guid: 961be46ca9a355943ae3f65c47741bb0, type: 3}
+      propertyPath: m_TagString
       value: Island
       objectReference: {fileID: 0}
     - target: {fileID: 4625923886776944, guid: 961be46ca9a355943ae3f65c47741bb0, type: 3}
@@ -898,7 +901,7 @@ Transform:
   m_GameObject: {fileID: 1455485777}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -13.35, y: 0, z: -1.21}
+  m_LocalPosition: {x: -13.35, y: 1, z: -1.21}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -929,7 +932,7 @@ Transform:
   m_GameObject: {fileID: 1651429376}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.3, y: 0, z: -11}
+  m_LocalPosition: {x: -8.3, y: 1, z: -11}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -960,7 +963,7 @@ Transform:
   m_GameObject: {fileID: 1740426193}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.38, y: 0, z: 8.64}
+  m_LocalPosition: {x: 4.38, y: 1, z: 8.64}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1064,7 +1067,7 @@ Transform:
   m_GameObject: {fileID: 1934027254}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.62, y: 0, z: 8.64}
+  m_LocalPosition: {x: -7.62, y: 1, z: 8.64}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1079,7 +1082,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2000910670}
-  - component: {fileID: 2000910669}
+  - component: {fileID: 2000910671}
   m_Layer: 0
   m_Name: SpawnManager
   m_TagString: Untagged
@@ -1087,26 +1090,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2000910669
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2000910668}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c7814f05ee54a743b9a1734dcbef0e3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawnPoints:
-  - {fileID: 1455485778}
-  - {fileID: 1934027255}
-  - {fileID: 1740426194}
-  - {fileID: 190401264}
-  - {fileID: 1176266729}
-  - {fileID: 1651429377}
-  enemyPrefab: {fileID: 8279026461862980053, guid: bb420f9ac2083cd4ea138531408225e7, type: 3}
 --- !u!4 &2000910670
 Transform:
   m_ObjectHideFlags: 0
@@ -1128,6 +1111,48 @@ Transform:
   - {fileID: 1651429377}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2000910671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2000910668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66c18f3e9979c8440b0978eec4620334, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WaveSpawner
+  enemyPrefab: {fileID: 8279026461862980053, guid: bb420f9ac2083cd4ea138531408225e7, type: 3}
+  powerUpPrefab: {fileID: 3709808119504899638, guid: 8cd96a1609dc5a04f8f54162c32cab4a, type: 3}
+  allSpawnPoints:
+  - {fileID: 1455485778}
+  - {fileID: 1934027255}
+  - {fileID: 1740426194}
+  - {fileID: 190401264}
+  - {fileID: 1176266729}
+  - {fileID: 1651429377}
+  waves:
+  - totalSpawnEnemies: 4
+    numberOfRandomSpawnPoint: 1
+    delayStart: 2
+    spawnInterval: 2
+    numberOfPowerUp: 0
+  - totalSpawnEnemies: 6
+    numberOfRandomSpawnPoint: 2
+    delayStart: 2
+    spawnInterval: 2
+    numberOfPowerUp: 1
+  - totalSpawnEnemies: 8
+    numberOfRandomSpawnPoint: 4
+    delayStart: 2
+    spawnInterval: 2
+    numberOfPowerUp: 1
+  - totalSpawnEnemies: 10
+    numberOfRandomSpawnPoint: 6
+    delayStart: 5
+    spawnInterval: 0.5
+    numberOfPowerUp: 2
 --- !u!1001 &6806225334679085962
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1138,7 +1163,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3563021515431232359, guid: 8cd96a1609dc5a04f8f54162c32cab4a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.06
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3563021515431232359, guid: 8cd96a1609dc5a04f8f54162c32cab4a, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1146,7 +1171,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3563021515431232359, guid: 8cd96a1609dc5a04f8f54162c32cab4a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.26
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3563021515431232359, guid: 8cd96a1609dc5a04f8f54162c32cab4a, type: 3}
       propertyPath: m_LocalRotation.w
