@@ -9,21 +9,19 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody rb;
 
-    private PowerUp powerUpScript; 
+    private PowerUp powerUpScript;
+    private StunPowerUp stunPowerScript;
 
     private InputAction moveAction;
-    private InputAction smashAction;
     private InputAction breakAction;
-
-    //public bool hasPowerUp = false;
 
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
-        powerUpScript = GetComponent<PowerUp>(); 
+        powerUpScript = GetComponent<PowerUp>();
+        stunPowerScript = GetComponent<StunPowerUp>();
 
         moveAction = InputSystem.actions.FindAction("Move");
-        smashAction = InputSystem.actions.FindAction("Smash");
         breakAction = InputSystem.actions.FindAction("Break");
     }
 
@@ -46,14 +44,6 @@ public class PlayerController : MonoBehaviour
             var dir = collision.transform.position - transform.position;
             dir.Normalize();
             enemyRb.AddForce(100 * dir, ForceMode.Impulse);
-
-            //if (hasPowerUp == true)
-            //{
-            //    var rb = collision.gameObject.GetComponent<Rigidbody>();
-            //    var dir = collision.transform.position - transform.position;
-            //    dir.Normalize();
-            //    rb.AddForce(100 * dir, ForceMode.Impulse);
-            //}
         }
     }
 
@@ -63,14 +53,7 @@ public class PlayerController : MonoBehaviour
         {
             Destroy(other.gameObject);
             powerUpScript.Activate(10f);
-
-            //hasPowerUp = true;
-
-            //if (countdownCoroutine != null)
-            //{
-            //    StopCoroutine(countdownCoroutine);
-            //}
-            //StartCoroutine(PowerUpCountDown());
+            stunPowerScript.ActivateStun();
         }
     }
 }
